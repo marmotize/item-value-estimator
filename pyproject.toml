@@ -3,5 +3,27 @@ name = "item-value-estimator"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = []
+requires-python = "~=3.13.0"
+dependencies = [
+    "pydantic~=2.11.7",
+    "pydantic-settings~=2.10.1",
+    "streamlit~=1.49.1",
+]
+
+[dependency-groups]
+dev = [
+    "mypy~=1.17.1",
+    "poethepoet~=0.37.0",
+    "ruff~=0.12.12",
+]
+
+[tool.poe.tasks]
+lint = "ruff check"
+style = "ruff check --fix"
+format = "ruff format"
+typecheck = "mypy ."
+check = [
+    { ref = "lint" },
+    { ref = "format" },
+    { ref = "typecheck" },
+]
