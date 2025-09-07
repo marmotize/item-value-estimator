@@ -4,13 +4,14 @@ import logging
 import sys
 from pathlib import Path
 
-from settings import settings
+from item_value_estimator.core.settings import settings
 
 
 def setup_logging() -> None:
     """Configure logging with best practices and minimal setup."""
     # Create logs directory if it doesn't exist
-    logs_dir = Path("logs")
+    project_root = Path(__file__).parent.parent.parent.parent
+    logs_dir = project_root / "logs"
     logs_dir.mkdir(exist_ok=True)
 
     # Configure root logger
@@ -54,7 +55,3 @@ def setup_logging() -> None:
 def get_logger(name: str) -> logging.Logger:
     """Get a logger instance for the given name."""
     return logging.getLogger(name)
-
-
-# Convenience logger for quick use (not recommended for production modules)
-logger = logging.getLogger("app")

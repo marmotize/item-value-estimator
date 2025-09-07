@@ -1,0 +1,17 @@
+# This file ensures that user-specific IntelliJ IDEA files are not committed to source control.
+# It's a safeguard in case the root .gitignore is not configured correctly.
+
+# Contains personal workspace settings, like open files, window layout, and local run history.
+/workspace.xml
+
+# Stores personal task and context information.
+/tasks.xml
+
+# Contains shelved changes, which are personal and should not be shared.
+/shelf/
+
+# Editor-based HTTP Client requests history.
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml

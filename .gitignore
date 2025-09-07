@@ -67,8 +67,9 @@ profile_default/
 ipython_config.py
 
 # PyCharm / IntelliJ IDEA
-.idea/
-*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/shelf/
 
 # VSCode
 .vscode/

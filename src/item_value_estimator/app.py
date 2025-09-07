@@ -1,7 +1,7 @@
 """Main application entry point."""
 
-from logging_config import get_logger, setup_logging
-from settings import settings
+from item_value_estimator.core.logging_config import get_logger, setup_logging
+from item_value_estimator.core.settings import settings
 
 # Initialize logging
 setup_logging()
