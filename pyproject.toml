@@ -1,7 +1,7 @@
 [project]
 name = "item-value-estimator"
 version = "0.1.0"
-description = "Add your description here"
+description = "Item value estimator"
 readme = "README.md"
 requires-python = "~=3.12.0"
 dependencies = [
@@ -27,3 +27,4 @@ check = [
     { ref = "format" },
     { ref = "typecheck" },
 ]
+run = "streamlit run src/item_value_estimator/streamlit.py"
