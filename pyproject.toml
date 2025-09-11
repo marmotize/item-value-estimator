@@ -1,11 +1,18 @@
+[build-system]
+requires = ["uv_build>=0.8.15,<0.9.0"]
+build-backend = "uv_build"
+
 [project]
 name = "item-value-estimator"
 version = "0.1.0"
 description = "Item value estimator"
 readme = "README.md"
 requires-python = "~=3.12.0"
+
 dependencies = [
     "pydantic~=2.11.7",
+    "pydantic-ai>=1.0.2",
+    "pydantic-ai-slim[openai]>=1.0.3",
     "pydantic-settings~=2.10.1",
     "streamlit~=1.49.1",
 ]

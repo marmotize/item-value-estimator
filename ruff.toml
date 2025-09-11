@@ -2,7 +2,7 @@ line-length = 100
 
 [lint]
 select = ['ALL']
-ignore = ['COM812', 'D203', 'D213', 'D104']
+ignore = ['COM812', 'D203', 'D213', 'D104', 'D103', 'D102', 'D100']
 
 [format]
 docstring-code-format = true
