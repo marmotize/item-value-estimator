@@ -18,13 +18,14 @@ class AppSettings(BaseSettings):
     log_level: str = Field(default="INFO", description="Logging level")
 
     # OpenAI settings
-    openai_api_key: SecretStr = Field(description="OpenAI API key", default=SecretStr(""))
+    openai_api_key: SecretStr = Field(..., description="OpenAI API key")
 
     model_config = SettingsConfigDict(
         env_file=str(PROJECT_ROOT / ".env"),
         env_file_encoding="utf-8",
         env_prefix="ITEM_ESTIMATOR_",
         case_sensitive=False,
+        env_ignore_empty=True,
         extra="ignore",
     )
 
