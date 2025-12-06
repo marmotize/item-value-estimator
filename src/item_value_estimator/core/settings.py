@@ -20,6 +20,11 @@ class AppSettings(BaseSettings):
     # OpenAI settings
     openai_api_key: SecretStr = Field(..., description="OpenAI API key")
 
+    # LangSmith settings
+    langsmith_project: str = Field(..., description="LangSmith project name")
+    langsmith_api_key: SecretStr = Field(..., description="LangSmith API key")
+    langsmith_endpoint: str = Field(..., description="LangSmith API endpoint")
+
     model_config = SettingsConfigDict(
         env_file=str(PROJECT_ROOT / ".env"),
         env_file_encoding="utf-8",
@@ -30,10 +35,15 @@ class AppSettings(BaseSettings):
     )
 
     def export_for_libs(self) -> None:
-        def _set(name: str, value: SecretStr) -> None:
-            os.environ[name] = str(value.get_secret_value())
+        def _set(name: str, value: SecretStr | str) -> None:
+            os.environ[name] = str(
+                value.get_secret_value() if isinstance(value, SecretStr) else value
+            )
 
         _set("OPENAI_API_KEY", self.openai_api_key)
+        _set("LANGSMITH_API_KEY", self.langsmith_api_key)
+        _set("LANGSMITH_PROJECT", self.langsmith_project)
+        _set("LANGSMITH_ENDPOINT", self.langsmith_endpoint)
 
 
 # Global settings instance

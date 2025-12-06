@@ -60,7 +60,7 @@ coverage.xml
 cover/
 
 # Ruff
-.ruff_cache/
+.ruff_cache
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -113,6 +113,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Application logs
+logs
 
 # Environment variables / secrets
 .env.local
