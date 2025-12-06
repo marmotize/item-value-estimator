@@ -16,7 +16,7 @@ def run_llm(item_url: str) -> str:
     model_settings = OpenAIResponsesModelSettings(
         openai_builtin_tools=[WebSearchToolParam(type="web_search")]
     )
-    model = OpenAIResponsesModel("gpt-4o")
+    model = OpenAIResponsesModel("gpt-5.1-2025-11-13")
     agent = Agent(model=model, model_settings=model_settings)
 
     result = agent.run_sync(

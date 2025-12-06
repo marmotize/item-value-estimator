@@ -59,6 +59,9 @@ coverage.xml
 .pytest_cache/
 cover/
 
+# Ruff
+.ruff_cache/
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
@@ -115,3 +118,5 @@ target/
 .env.local
 .env.*.local
 .envrc
+
+.DS_Store
